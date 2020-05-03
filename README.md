@@ -13,7 +13,7 @@ This python package will enable for users to reduce the size of input scRNAseq m
   3. cell.ids of randomly selected cells
   4. tSNE plot, if the coordinates were given.
 
-# The benefit of downsizing cells with averaging the exprssion levels of gene?
+# The benefit of downsizing cells with averaging gene exprssion values?
   1. downsizing itself reduce the calculation burden --> reducing calculation time
   2. Increase the resolution of differential gene expressin.
 
