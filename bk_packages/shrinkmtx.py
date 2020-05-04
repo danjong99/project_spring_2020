@@ -1,7 +1,16 @@
 
+import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
+import seaborn as sns
+from bk_packages.basic_methods import *
+import random
+import math
+from bk_packages.basic_methods import unique, t, convert_to_float, rowMean
+
 class rand_draw():
     """A simple way to visualize the results"""
-    
+
     def __init__(self, mtx, meta, num_to_select=20):
         
         """Initialize object's attributes"""
@@ -27,7 +36,7 @@ class rand_draw():
         ## group cell.ids based on their cluster
         for cluster in unique_cluster:
             index = [i for i, n in enumerate(temp) if n == cluster] # extract the indices of rows in a given cluster
-            a = [meta[i][1:3] for i in index] # using the indices, extract cell.id and assigned cluster info.
+            a = [self.meta[i][1:3] for i in index] # using the indices, extract cell.id and assigned cluster info.
             self.meta_by_cluster.append(a)
     
         # convert the list acquired above to dictionary with the cluster as keys
@@ -43,9 +52,6 @@ class rand_draw():
     
     def C_random_selector(self, num_to_select = None):
         """Random selection of cell.ids from each cluster"""
-
-        import random
-        import math
             
         if num_to_select != None:
             if isinstance(num_to_select, int):
@@ -111,26 +117,16 @@ class rand_draw():
             print( "Key Cell ID: " + k + " - Assigned Cluster: " + str(meta_by_clus_dic[k]) + " - Number of Cell: " + str(len(v)))
         
 
-
 class shrunken_mtx(rand_draw):
     
     """this class doesn't inherit self.attributes from randomDraw"""
     """The only purpose is to visualize the original/shrunken data"""
-    
+
     def __init__(self, mtx, meta, num_to_select):
         super().__init__(mtx, meta, num_to_select)
-                
-#        self.mtx_small = mtx_small
-#        self.meta_samll = meta_small
-#        self.meta = meta
         
     def tSNE_input(self):
-        
-        import pandas as pd
-        import numpy as np
-        from matplotlib import pyplot as plt
-        import seaborn as sns
-        
+               
         temp = pd.DataFrame.from_dict(self.meta)
         temp.columns = [temp.iloc[0][i] for i in range(0,len(temp.columns))]
         pd_meta = temp.iloc[1:].copy()
@@ -152,11 +148,6 @@ class shrunken_mtx(rand_draw):
     
     
     def tSNE_output(self):
-        
-        import pandas as pd
-        import numpy as np
-        from matplotlib import pyplot as plt
-        import seaborn as sns
         
         if bool(self.mtx_small):
             
