@@ -12,7 +12,7 @@ This python package will enable for users to reduce the size of input scRNAseq m
 
 # Description
 
-  1. Using well-built packages e.g. numpy and pandas are avoided as much as possible because this is class final project.
+  1. Using well-built packages e.g. numpy and pandas are avoided as much as possible because this is learning course.
      However, numpy, pandas, matplotlib and seaborn used for visualization of input and output.
   2. I used class, which seems redundant in this case, for practice. Version w/o class is in old code folder (but not complete).
   3. How it works.
