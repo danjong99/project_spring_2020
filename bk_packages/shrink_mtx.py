@@ -25,7 +25,7 @@ class rand_draw():
         self.dic_random_items = {}
         self.mtx_small = {}
         
-    def A_clusTocell_dic_generator(self):
+    def A_clustocell_dic_generator(self):
         
         """Return {cluster:cell.ids} dictionary """
         
@@ -43,7 +43,7 @@ class rand_draw():
         for j in range(0, len(unique_cluster)):
             self.meta_dic[ self.meta_by_cluster[j][0][1] ] = [ self.meta_by_cluster[j][i][0] for i in range(0, len(self.meta_by_cluster[j]))]
     
-    def B_cellTogene_dic_generator(self):
+    def B_celltogene_dic_generator(self):
         """Apply T-transformation and convert the list of lists to Dictionary"""
         """with cell.id as keys and gene expression as value"""
         mtx_t = t(self.mtx)
@@ -86,6 +86,8 @@ class rand_draw():
     
     def D_avg_gene(self):
         
+        """Average gene expression values by defined rowMean fuction"""
+        
         a = self.mtx_dic['gene'].copy()
         self.mtx_small['gene'] = a
     
@@ -104,6 +106,8 @@ class rand_draw():
     
     def E_briefing(self):
         
+        """Briefly reports the result of random selection"""
+        
         meta_by_clus_temp = []
         for i in range(0, len(self.meta_by_cluster)):
             for j in range(0, len(self.meta_by_cluster[i])):
@@ -115,17 +119,11 @@ class rand_draw():
 
         for k, v in self.dic_random_items.items():
             print( "Key Cell ID: " + k + " - Assigned Cluster: " + str(meta_by_clus_dic[k]) + " - Number of Cell: " + str(len(v)))
-        
 
-class shrunken_mtx(rand_draw):
-    
-    """this class doesn't inherit self.attributes from randomDraw"""
-    """The only purpose is to visualize the original/shrunken data"""
-
-    def __init__(self, mtx, meta, num_to_select):
-        super().__init__(mtx, meta, num_to_select)
         
     def tSNE_input(self):
+        
+        """Visualize tSNE cooridinates from original metadata"""
                
         temp = pd.DataFrame.from_dict(self.meta)
         temp.columns = [temp.iloc[0][i] for i in range(0,len(temp.columns))]
@@ -148,6 +146,8 @@ class shrunken_mtx(rand_draw):
     
     
     def tSNE_output(self):
+        
+        """Visualize tSNE cooridinates from shrunken metadata"""
         
         if bool(self.mtx_small):
             
@@ -175,4 +175,4 @@ class shrunken_mtx(rand_draw):
             plt.ylabel('tSEN 2', weight='bold').set_fontsize('20')
         
         else:
-            print("shrunken mtx is empy. parental methods should be run.")
+            print("shrunken mtx is empy. A,B,C methods should be run.")

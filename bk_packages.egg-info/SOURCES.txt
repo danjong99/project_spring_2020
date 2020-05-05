@@ -3,7 +3,7 @@ setup.py
 bk_packages/__init__.py
 bk_packages/basic_methods.py
 bk_packages/main.py
-bk_packages/shrinkmtx.py
+bk_packages/shrink_mtx.py
 bk_packages.egg-info/PKG-INFO
 bk_packages.egg-info/SOURCES.txt
 bk_packages.egg-info/dependency_links.txt
