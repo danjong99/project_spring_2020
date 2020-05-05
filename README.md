@@ -12,11 +12,12 @@ This python package will enable for users to reduce the size of input scRNAseq m
 
 # Description
 
-  1. Using well-built packages e.g. numpy and pandas are avoided as much as possible because this is learning course.
+  1. Using well-built packages e.g. numpy and pandas are avoided as much as possible because this is a learning course.
      However, numpy, pandas, matplotlib and seaborn used for visualization of input and output.
-  2. I used class, which seems redundant in this case, for practice. Version w/o class is in old code folder (but not complete).
+  2. I used class, which seems redundant in this case, for practice. Version w/o class is in old code folder ( but not complete form ).
   3. How it works.
-     'rand_draw' class has 4 essential methods (annotated by Alphabet A-D) to accomplish the intended task.
+     'rand_draw' class has 4 essential methods (annotated by Alphabet A-D) to accomplish the intended task 
+      and 3 additional methods for reports.
         - First, generate an object (obj = rand_draw(mtx, meta, num_to_select))
         - you should perform obj.A-(), .B-(), .C-() and .D-() in order.
         - obj.E-() is brief report of the result.
