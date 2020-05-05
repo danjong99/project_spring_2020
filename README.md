@@ -29,3 +29,6 @@ This python package will enable for users to reduce the size of input scRNAseq m
   2. Increase the resolution of differential gene expressin.
 
 (e.g. assume that you have 400 cells in cluster 1 of your scRNAseq data, and if you set the number of cells to be chosen as 20, then 20 cells from cluster 1 of your data will be randomly and repeatedly selected with no replacement. This process will downsize the cluster 1 from 400 cells to 20 cells with better gene expression resolution.)
+
+# Contact Info.
+   > Byunghyun Kang (byunghyun.kang@nih.gov; danjong99@gmail.com)
