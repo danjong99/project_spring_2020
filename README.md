@@ -20,15 +20,10 @@ This python package will enable for users to reduce the size of input scRNAseq m
       and 3 additional methods for reports.
         - First, generate an object (obj = rand_draw(mtx, meta, num_to_select))
         - you should perform obj.A-(), .B-(), .C-() and .D-() in order.
-        - obj.E-() is brief report of the result.
-        - obj.tSNE_intput() / .tSNE_output() give original/shrunken tSNE plot, repectively.
+        - obj.E-() is for brief report of result.
+        - obj.tSNE_intput() / .tSNE_output() return original/shrunken tSNE plot, repectively,
+          if the coordinates were given.
     
-# Returns
-  1. shrunken matrix
-  2. shrunken metadata
-  3. cell.ids of randomly selected cells
-  4. tSNE plot, if the coordinates were given.
-
 # The benefit of downsizing cells with averaging the exprssion levels of gene?
   1. downsizing itself reduce the calculation burden --> reducing calculation time
   2. Increase the resolution of differential gene expressin.
